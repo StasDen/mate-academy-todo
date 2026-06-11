@@ -9,5 +9,5 @@ class TaskAdmin(admin.ModelAdmin):
 
 
 @admin.register(Tag)
-class AdminTag(admin.ModelAdmin):
+class AdminTag(admin.ModelAdmin):  # NOTE: keeping naming convention is actually good for readability ('TagAdmin' will fit perfectly)
     pass

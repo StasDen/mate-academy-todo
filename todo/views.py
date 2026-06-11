@@ -1,4 +1,4 @@
-from django.shortcuts import get_object_or_404, redirect
+from django.shortcuts import get_object_or_404, redirect  # FIXME: remove unused imports
 from django.urls import reverse_lazy
 from django.views import generic, View
 
@@ -18,6 +18,7 @@ class TaskCreateView(generic.CreateView):
     model = Task
     form_class = TaskForm
     template_name = "todo/task_form.html"
+    # NOTE: from user experience perspective, I would recommend redirecting to the tasks list page
     success_url = "http://127.0.0.1:8000/task/create"
 
 
@@ -64,7 +65,7 @@ class TagDeleteView(generic.DeleteView):
 
 
 class TaskChangeStatusView(View):
-    def post(self, request, pk):
+    def post(self, request, pk):  # NOTE: use code annotations as a good practice
         task = Task.objects.get(id=pk)
         task.is_done = not task.is_done
         task.save()

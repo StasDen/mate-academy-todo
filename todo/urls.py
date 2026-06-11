@@ -24,6 +24,7 @@ urlpatterns = [
     path("tags/<int:pk>/update", TagUpdateView.as_view(), name="tag-update"),
     path("tags/<int:pk>/delete", TagDeleteView.as_view(), name="tag-delete"),
 
+    # NOTE: use one style of quotes in your code (double ones are preferable)
     path('chng_st/<int:pk>', TaskChangeStatusView.as_view(), name='task_change_status'),
 
 ]
