@@ -1,5 +1,5 @@
 from django import forms
-from django.core.exceptions import ValidationError  # FIXME: remove unused imports
+from django.core.exceptions import ValidationError
 
 from todo.models import Tag, Task
 
